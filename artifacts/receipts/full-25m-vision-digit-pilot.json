@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.0",
+  "status": "complete",
+  "stage": "full_25m_vision_digit_pilot",
+  "checkpoint_saved": false,
+  "source_checkpoint": "runs\\pretrain-001\\checkpoint-0100",
+  "weight_loading": {
+    "copied_tensors": 301,
+    "skipped_tensors": [
+      "embedding.weight",
+      "output.weight"
+    ]
+  },
+  "trainable_surface": {
+    "trainable_parameters": 2298272,
+    "total_parameters": 25838712,
+    "trainable_surfaces": [
+      "vision_encoder",
+      "last_block",
+      "final_norm",
+      "tied_embedding"
+    ]
+  },
+  "language_model": {
+    "vocab_size": 263,
+    "dim": 192,
+    "layers": 12,
+    "heads": 6,
+    "expert_hidden": 384,
+    "experts": 8,
+    "top_k": 2,
+    "streams": 4,
+    "sparse_window": 32,
+    "sparse_stride": 32,
+    "max_sequence_length": 96
+  },
+  "vision_model": {
+    "image_size": 32,
+    "patch_size": 4,
+    "in_channels": 3,
+    "hidden_size": 24,
+    "depth": 2,
+    "heads": 4,
+    "intermediate_size": 48,
+    "spatial_merge_size": 2,
+    "projection_intermediate_size": 64,
+    "rms_norm_eps": 1e-05
+  },
+  "config": {
+    "seed": 73,
+    "steps": 40,
+    "batch_size": 10,
+    "eval_examples": 100,
+    "learning_rate": 0.001,
+    "max_seconds": 540,
+    "stopped_early": false
+  },
+  "environment": {
+    "device": "cpu",
+    "torch_version": "2.10.0+cpu",
+    "python_version": "3.12.0"
+  },
+  "before": {
+    "accuracy": 0.0,
+    "loss": 5.695526123046875,
+    "correct": 0,
+    "examples": 100,
+    "samples": [
+      {
+        "target": "0",
+        "prediction": " "
+      },
+      {
+        "target": "1",
+        "prediction": " "
+      },
+      {
+        "target": "2",
+        "prediction": " "
+      },
+      {
+        "target": "3",
+        "prediction": " "
+      },
+      {
+        "target": "4",
+        "prediction": " "
+      },
+      {
+        "target": "5",
+        "prediction": " "
+      },
+      {
+        "target": "6",
+        "prediction": " "
+      },
+      {
+        "target": "7",
+        "prediction": " "
+      },
+      {
+        "target": "8",
+        "prediction": " "
+      },
+      {
+        "target": "9",
+        "prediction": " "
+      }
+    ]
+  },
+  "after": {
+    "accuracy": 0.44999998807907104,
+    "loss": 1.4267381429672241,
+    "correct": 45,
+    "examples": 100,
+    "samples": [
+      {
+        "target": "0",
+        "prediction": "3"
+      },
+      {
+        "target": "1",
+        "prediction": "1"
+      },
+      {
+        "target": "2",
+        "prediction": "3"
+      },
+      {
+        "target": "3",
+        "prediction": "3"
+      },
+      {
+        "target": "4",
+        "prediction": "4"
+      },
+      {
+        "target": "5",
+        "prediction": "9"
+      },
+      {
+        "target": "6",
+        "prediction": "8"
+      },
+      {
+        "target": "7",
+        "prediction": "4"
+      },
+      {
+        "target": "8",
+        "prediction": "8"
+      },
+      {
+        "target": "9",
+        "prediction": "9"
+      }
+    ]
+  },
+  "training_curve": [
+    {
+      "step": 1,
+      "loss": 5.709744930267334
+    },
+    {
+      "step": 2,
+      "loss": 5.359684467315674
+    },
+    {
+      "step": 3,
+      "loss": 4.844313144683838
+    },
+    {
+      "step": 4,
+      "loss": 4.498330593109131
+    },
+    {
+      "step": 5,
+      "loss": 4.1642584800720215
+    },
+    {
+      "step": 6,
+      "loss": 3.861156940460205
+    },
+    {
+      "step": 7,
+      "loss": 3.581350803375244
+    },
+    {
+      "step": 8,
+      "loss": 3.372128963470459
+    },
+    {
+      "step": 9,
+      "loss": 3.162431240081787
+    },
+    {
+      "step": 10,
+      "loss": 3.0100326538085938
+    },
+    {
+      "step": 11,
+      "loss": 2.8135478496551514
+    },
+    {
+      "step": 12,
+      "loss": 2.676945209503174
+    },
+    {
+      "step": 13,
+      "loss": 2.5268208980560303
+    },
+    {
+      "step": 14,
+      "loss": 2.3969924449920654
+    },
+    {
+      "step": 15,
+      "loss": 2.296649932861328
+    },
+    {
+      "step": 16,
+      "loss": 2.1408982276916504
+    },
+    {
+      "step": 17,
+      "loss": 2.0965540409088135
+    },
+    {
+      "step": 18,
+      "loss": 2.02557635307312
+    },
+    {
+      "step": 19,
+      "loss": 1.9374799728393555
+    },
+    {
+      "step": 20,
+      "loss": 1.8865493535995483
+    },
+    {
+      "step": 21,
+      "loss": 1.8853118419647217
+    },
+    {
+      "step": 22,
+      "loss": 1.875004768371582
+    },
+    {
+      "step": 23,
+      "loss": 1.9883058071136475
+    },
+    {
+      "step": 24,
+      "loss": 1.7847890853881836
+    },
+    {
+      "step": 25,
+      "loss": 1.7397515773773193
+    },
+    {
+      "step": 26,
+      "loss": 1.7011133432388306
+    },
+    {
+      "step": 27,
+      "loss": 2.004819393157959
+    },
+    {
+      "step": 28,
+      "loss": 1.6364396810531616
+    },
+    {
+      "step": 29,
+      "loss": 1.8872705698013306
+    },
+    {
+      "step": 30,
+      "loss": 1.8520164489746094
+    },
+    {
+      "step": 31,
+      "loss": 1.6509920358657837
+    },
+    {
+      "step": 32,
+      "loss": 1.6014974117279053
+    },
+    {
+      "step": 33,
+      "loss": 1.5856770277023315
+    },
+    {
+      "step": 34,
+      "loss": 1.5637433528900146
+    },
+    {
+      "step": 35,
+      "loss": 1.5548138618469238
+    },
+    {
+      "step": 36,
+      "loss": 1.4956167936325073
+    },
+    {
+      "step": 37,
+      "loss": 1.4987891912460327
+    },
+    {
+      "step": 38,
+      "loss": 1.8200753927230835
+    },
+    {
+      "step": 39,
+      "loss": 1.4751054048538208
+    },
+    {
+      "step": 40,
+      "loss": 1.3850524425506592
+    }
+  ],
+  "elapsed_seconds": 14.066
+}

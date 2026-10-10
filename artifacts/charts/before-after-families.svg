@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
+<rect width="100%" height="100%" fill="#171714"/>
+<text x="90" y="40" fill="#f4f0e8" font-family="Arial" font-size="25" font-weight="700">Frozen confirm split, before vs after</text>
+<text x="90" y="64" fill="#aaa69d" font-family="Arial" font-size="14">Greedy pass@1 per family on held-out tasks</text>
+<line x1="90" y1="440.0" x2="880" y2="440.0" stroke="#353530"/>
+<text x="78" y="445.0" fill="#aaa69d" text-anchor="end" font-family="Arial" font-size="13">0</text>
+<line x1="90" y1="368.0" x2="880" y2="368.0" stroke="#353530"/>
+<text x="78" y="373.0" fill="#aaa69d" text-anchor="end" font-family="Arial" font-size="13">20</text>
+<line x1="90" y1="296.0" x2="880" y2="296.0" stroke="#353530"/>
+<text x="78" y="301.0" fill="#aaa69d" text-anchor="end" font-family="Arial" font-size="13">40</text>
+<line x1="90" y1="224.0" x2="880" y2="224.0" stroke="#353530"/>
+<text x="78" y="229.0" fill="#aaa69d" text-anchor="end" font-family="Arial" font-size="13">60</text>
+<line x1="90" y1="152.0" x2="880" y2="152.0" stroke="#353530"/>
+<text x="78" y="157.0" fill="#aaa69d" text-anchor="end" font-family="Arial" font-size="13">80</text>
+<line x1="90" y1="80.0" x2="880" y2="80.0" stroke="#353530"/>
+<text x="78" y="85.0" fill="#aaa69d" text-anchor="end" font-family="Arial" font-size="13">100</text>
+<rect x="110.0" y="80.0" width="51.2" height="360.0" rx="6" fill="#d97757"/>
+<text x="135.6" y="70.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">100</text>
+<text x="135.6" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">absolute</text>
+<rect x="169.2" y="440.0" width="51.2" height="0.0" rx="6" fill="#7aa2c9"/>
+<text x="194.8" y="430.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">0</text>
+<text x="194.8" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">even</text>
+<rect x="228.3" y="80.0" width="51.2" height="360.0" rx="6" fill="#9eb67b"/>
+<text x="253.9" y="70.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">100</text>
+<text x="253.9" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">list_sum</text>
+<rect x="287.5" y="80.0" width="51.2" height="360.0" rx="6" fill="#e0b45c"/>
+<text x="313.1" y="70.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">100</text>
+<text x="313.1" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">nonnegative</text>
+<rect x="346.7" y="80.0" width="51.2" height="360.0" rx="6" fill="#d97757"/>
+<text x="372.2" y="70.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">100</text>
+<text x="372.2" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">reverse</text>
+<rect x="405.8" y="80.0" width="51.2" height="360.0" rx="6" fill="#7aa2c9"/>
+<text x="431.4" y="70.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">100</text>
+<text x="431.4" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">square</text>
+<text x="287.5" y="486" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700">before</text>
+<rect x="505.0" y="440.0" width="51.2" height="0.0" rx="6" fill="#d97757"/>
+<text x="530.6" y="430.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">0</text>
+<text x="530.6" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">absolute</text>
+<rect x="564.2" y="80.0" width="51.2" height="360.0" rx="6" fill="#7aa2c9"/>
+<text x="589.8" y="70.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">100</text>
+<text x="589.8" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">even</text>
+<rect x="623.3" y="80.0" width="51.2" height="360.0" rx="6" fill="#9eb67b"/>
+<text x="648.9" y="70.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">100</text>
+<text x="648.9" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">list_sum</text>
+<rect x="682.5" y="80.0" width="51.2" height="360.0" rx="6" fill="#e0b45c"/>
+<text x="708.1" y="70.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">100</text>
+<text x="708.1" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">nonnegative</text>
+<rect x="741.7" y="440.0" width="51.2" height="0.0" rx="6" fill="#d97757"/>
+<text x="767.2" y="430.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">0</text>
+<text x="767.2" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">reverse</text>
+<rect x="800.8" y="440.0" width="51.2" height="0.0" rx="6" fill="#7aa2c9"/>
+<text x="826.4" y="430.0" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">0</text>
+<text x="826.4" y="464" fill="#aaa69d" text-anchor="middle" font-family="Arial" font-size="13">square</text>
+<text x="682.5" y="486" fill="#f4f0e8" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700">after</text>
+<text x="22" y="260" fill="#aaa69d" font-family="Arial" font-size="14" transform="rotate(-90 22 260)">Tasks solved (%)</text>
+</svg>

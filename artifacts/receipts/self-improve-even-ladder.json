@@ -1,0 +1,485 @@
+{
+  "config": {
+    "cycles": 3,
+    "expand_on_master": false,
+    "families_ladder": [
+      "even"
+    ],
+    "fine_tune_batch_size": 8,
+    "fine_tune_steps": 24,
+    "learning_rate": 0.0001,
+    "proposals_per_task": 16,
+    "seed": 73,
+    "target_pass_rate": 1.0,
+    "temperature": 0.8
+  },
+  "cycles": [
+    {
+      "checkpoint": {
+        "path": "runs\\self-improve-even-001\\checkpoint-cycle-01",
+        "weights_sha256": "92b1aeccb506b3e7b7f7a93f51db4a7cc0f69f4b3a4fca460c5282a080d622c2"
+      },
+      "cycle": 1,
+      "evaluation": {
+        "episodes": [
+          {
+            "completion": "\n    return x % 2 = 0\n",
+            "family": "even",
+            "passed": false,
+            "status": "invalid",
+            "task_id": "dev-even-000",
+            "tests_passed": 0
+          },
+          {
+            "completion": "\n    return x % 2 == 0\n",
+            "family": "even",
+            "passed": true,
+            "status": "passed",
+            "task_id": "dev-even-001",
+            "tests_passed": 3
+          }
+        ],
+        "pass_rate": 0.5,
+        "solved": 1,
+        "tasks": 2
+      },
+      "families": [
+        "even"
+      ],
+      "fine_tune": {
+        "curve": [
+          {
+            "loss": 0.4438531696796417,
+            "step": 1,
+            "tokens": 840
+          },
+          {
+            "loss": 0.5136268734931946,
+            "step": 2,
+            "tokens": 840
+          },
+          {
+            "loss": 0.39731329679489136,
+            "step": 3,
+            "tokens": 840
+          },
+          {
+            "loss": 0.3594987392425537,
+            "step": 4,
+            "tokens": 840
+          },
+          {
+            "loss": 0.33264389634132385,
+            "step": 5,
+            "tokens": 840
+          },
+          {
+            "loss": 0.30611684918403625,
+            "step": 6,
+            "tokens": 840
+          },
+          {
+            "loss": 0.3013702630996704,
+            "step": 7,
+            "tokens": 840
+          },
+          {
+            "loss": 0.27403122186660767,
+            "step": 8,
+            "tokens": 840
+          },
+          {
+            "loss": 0.26112455129623413,
+            "step": 9,
+            "tokens": 840
+          },
+          {
+            "loss": 0.25233182311058044,
+            "step": 10,
+            "tokens": 840
+          },
+          {
+            "loss": 0.2439597249031067,
+            "step": 11,
+            "tokens": 840
+          },
+          {
+            "loss": 0.2340254783630371,
+            "step": 12,
+            "tokens": 840
+          },
+          {
+            "loss": 0.22255434095859528,
+            "step": 13,
+            "tokens": 840
+          },
+          {
+            "loss": 0.20999576151371002,
+            "step": 14,
+            "tokens": 840
+          },
+          {
+            "loss": 0.2091400921344757,
+            "step": 15,
+            "tokens": 840
+          },
+          {
+            "loss": 0.188524067401886,
+            "step": 16,
+            "tokens": 840
+          },
+          {
+            "loss": 0.1717645674943924,
+            "step": 17,
+            "tokens": 840
+          },
+          {
+            "loss": 0.1581040918827057,
+            "step": 18,
+            "tokens": 840
+          },
+          {
+            "loss": 0.16132189333438873,
+            "step": 19,
+            "tokens": 840
+          },
+          {
+            "loss": 0.14214950799942017,
+            "step": 20,
+            "tokens": 840
+          },
+          {
+            "loss": 0.1381441205739975,
+            "step": 21,
+            "tokens": 840
+          },
+          {
+            "loss": 0.1366068422794342,
+            "step": 22,
+            "tokens": 840
+          },
+          {
+            "loss": 0.13291846215724945,
+            "step": 23,
+            "tokens": 840
+          },
+          {
+            "loss": 0.13129597902297974,
+            "step": 24,
+            "tokens": 840
+          }
+        ],
+        "steps": 24,
+        "tokens_seen": 20160
+      },
+      "pass_rate_after": 0.5,
+      "pass_rate_before": 0.0,
+      "proposal_details": [
+        {
+          "family": "even",
+          "passed": 1,
+          "proposals": 16,
+          "task_id": "rl-even-000",
+          "valid": 5
+        },
+        {
+          "family": "even",
+          "passed": 3,
+          "proposals": 16,
+          "task_id": "rl-even-001",
+          "valid": 6
+        },
+        {
+          "family": "even",
+          "passed": 0,
+          "proposals": 16,
+          "task_id": "rl-even-002",
+          "valid": 0
+        },
+        {
+          "family": "even",
+          "passed": 0,
+          "proposals": 16,
+          "task_id": "rl-even-003",
+          "valid": 4
+        }
+      ],
+      "seconds": 290.248,
+      "verified_pairs_added": 2,
+      "verified_pairs_total": 2
+    },
+    {
+      "checkpoint": {
+        "path": "runs\\self-improve-even-001\\checkpoint-cycle-02",
+        "weights_sha256": "5f2a23cb254d137c091d466e2f62cd79517a6ccbdc527c28bd12174805d7fd85"
+      },
+      "cycle": 2,
+      "evaluation": {
+        "episodes": [
+          {
+            "completion": "\n    return x % 2 = 0\n",
+            "family": "even",
+            "passed": false,
+            "status": "invalid",
+            "task_id": "dev-even-000",
+            "tests_passed": 0
+          },
+          {
+            "completion": "\n    return x % 2 == 0\n",
+            "family": "even",
+            "passed": true,
+            "status": "passed",
+            "task_id": "dev-even-001",
+            "tests_passed": 3
+          }
+        ],
+        "pass_rate": 0.5,
+        "solved": 1,
+        "tasks": 2
+      },
+      "families": [
+        "even"
+      ],
+      "fine_tune": {
+        "curve": [
+          {
+            "loss": 0.20503687858581543,
+            "step": 1,
+            "tokens": 842
+          },
+          {
+            "loss": 0.2739005982875824,
+            "step": 2,
+            "tokens": 842
+          },
+          {
+            "loss": 0.20313197374343872,
+            "step": 3,
+            "tokens": 842
+          },
+          {
+            "loss": 0.1923617720603943,
+            "step": 4,
+            "tokens": 842
+          },
+          {
+            "loss": 0.1906985640525818,
+            "step": 5,
+            "tokens": 842
+          },
+          {
+            "loss": 0.17853517830371857,
+            "step": 6,
+            "tokens": 842
+          },
+          {
+            "loss": 0.17542394995689392,
+            "step": 7,
+            "tokens": 842
+          },
+          {
+            "loss": 0.17213255167007446,
+            "step": 8,
+            "tokens": 842
+          },
+          {
+            "loss": 0.1681298017501831,
+            "step": 9,
+            "tokens": 842
+          },
+          {
+            "loss": 0.16160474717617035,
+            "step": 10,
+            "tokens": 842
+          },
+          {
+            "loss": 0.15673017501831055,
+            "step": 11,
+            "tokens": 842
+          },
+          {
+            "loss": 0.15218685567378998,
+            "step": 12,
+            "tokens": 842
+          },
+          {
+            "loss": 0.14739899337291718,
+            "step": 13,
+            "tokens": 842
+          },
+          {
+            "loss": 0.14392423629760742,
+            "step": 14,
+            "tokens": 842
+          },
+          {
+            "loss": 0.13782408833503723,
+            "step": 15,
+            "tokens": 842
+          },
+          {
+            "loss": 0.13254414498806,
+            "step": 16,
+            "tokens": 842
+          },
+          {
+            "loss": 0.12880437076091766,
+            "step": 17,
+            "tokens": 842
+          },
+          {
+            "loss": 0.12411414086818695,
+            "step": 18,
+            "tokens": 842
+          },
+          {
+            "loss": 0.12052218616008759,
+            "step": 19,
+            "tokens": 842
+          },
+          {
+            "loss": 0.11914844810962677,
+            "step": 20,
+            "tokens": 842
+          },
+          {
+            "loss": 0.11315026134252548,
+            "step": 21,
+            "tokens": 842
+          },
+          {
+            "loss": 0.10993486642837524,
+            "step": 22,
+            "tokens": 842
+          },
+          {
+            "loss": 0.10681574046611786,
+            "step": 23,
+            "tokens": 842
+          },
+          {
+            "loss": 0.10498121380805969,
+            "step": 24,
+            "tokens": 842
+          }
+        ],
+        "steps": 24,
+        "tokens_seen": 20208
+      },
+      "pass_rate_after": 0.5,
+      "pass_rate_before": 0.5,
+      "proposal_details": [
+        {
+          "family": "even",
+          "passed": 13,
+          "proposals": 16,
+          "task_id": "rl-even-000",
+          "valid": 13
+        },
+        {
+          "family": "even",
+          "passed": 13,
+          "proposals": 16,
+          "task_id": "rl-even-001",
+          "valid": 13
+        },
+        {
+          "family": "even",
+          "passed": 0,
+          "proposals": 16,
+          "task_id": "rl-even-002",
+          "valid": 0
+        },
+        {
+          "family": "even",
+          "passed": 9,
+          "proposals": 16,
+          "task_id": "rl-even-003",
+          "valid": 10
+        }
+      ],
+      "seconds": 236.278,
+      "verified_pairs_added": 2,
+      "verified_pairs_total": 4
+    },
+    {
+      "checkpoint": {
+        "path": "runs\\self-improve-even-001\\checkpoint-cycle-03",
+        "weights_sha256": "5f2a23cb254d137c091d466e2f62cd79517a6ccbdc527c28bd12174805d7fd85"
+      },
+      "cycle": 3,
+      "evaluation": {
+        "episodes": [
+          {
+            "completion": "\n    return x % 2 = 0\n",
+            "family": "even",
+            "passed": false,
+            "status": "invalid",
+            "task_id": "dev-even-000",
+            "tests_passed": 0
+          },
+          {
+            "completion": "\n    return x % 2 == 0\n",
+            "family": "even",
+            "passed": true,
+            "status": "passed",
+            "task_id": "dev-even-001",
+            "tests_passed": 3
+          }
+        ],
+        "pass_rate": 0.5,
+        "solved": 1,
+        "tasks": 2
+      },
+      "families": [
+        "even"
+      ],
+      "fine_tune": null,
+      "pass_rate_after": 0.5,
+      "pass_rate_before": 0.5,
+      "proposal_details": [
+        {
+          "family": "even",
+          "passed": 13,
+          "proposals": 16,
+          "task_id": "rl-even-000",
+          "valid": 14
+        },
+        {
+          "family": "even",
+          "passed": 11,
+          "proposals": 16,
+          "task_id": "rl-even-001",
+          "valid": 11
+        },
+        {
+          "family": "even",
+          "passed": 0,
+          "proposals": 16,
+          "task_id": "rl-even-002",
+          "valid": 1
+        },
+        {
+          "family": "even",
+          "passed": 13,
+          "proposals": 16,
+          "task_id": "rl-even-003",
+          "valid": 14
+        }
+      ],
+      "seconds": 229.05,
+      "verified_pairs_added": 0,
+      "verified_pairs_total": 4
+    }
+  ],
+  "device": "cpu",
+  "elapsed_seconds": 755.579,
+  "initial_checkpoint": {
+    "path": "runs\\self-improve-even-001\\checkpoint-cycle-00",
+    "weights_sha256": "c1197e5a01df2a16e10755a1ebe8f3afec7ba4e4625d7cd03558882502e8b586"
+  },
+  "schema_version": "1.0",
+  "stage": "recursive_self_improvement",
+  "status": "complete",
+  "verified_memory_final_size": 4
+}

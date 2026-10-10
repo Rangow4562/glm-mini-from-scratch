@@ -1,0 +1,1405 @@
+{
+  "batch_size": 16,
+  "checkpoints": [
+    {
+      "path": "runs\\pretrain-001\\checkpoint-0000",
+      "step": 0,
+      "weights_sha256": "3fb74373d7aed0bb43ac052dc5675efab99366ef3d3490a460479ded962bc096"
+    },
+    {
+      "path": "runs\\pretrain-001\\checkpoint-0050",
+      "step": 50,
+      "weights_sha256": "5ad5197741f8c8a53ec9fc6433ffcc7ddec86c9718d125235908475f6db8cd10"
+    },
+    {
+      "path": "runs\\pretrain-001\\checkpoint-0100",
+      "step": 100,
+      "weights_sha256": "a9371fa6d7c0841bdc67248c21d1a964f7a7dda0785c381c10fc50323bf9ce97"
+    },
+    {
+      "path": "runs\\pretrain-001\\checkpoint-0150",
+      "step": 150,
+      "weights_sha256": "c1197e5a01df2a16e10755a1ebe8f3afec7ba4e4625d7cd03558882502e8b586"
+    }
+  ],
+  "config": {
+    "dim": 192,
+    "expert_hidden": 384,
+    "experts": 8,
+    "heads": 6,
+    "layers": 12,
+    "max_sequence_length": 192,
+    "sparse_stride": 32,
+    "sparse_window": 32,
+    "streams": 4,
+    "top_k": 2,
+    "vocab_size": 260
+  },
+  "device": "cpu",
+  "elapsed_seconds": 544.805,
+  "learning_rate": 0.0003,
+  "parameter_counts": {
+    "active_per_token_estimate": 9805344,
+    "total": 25730592
+  },
+  "peak_vram_gib": null,
+  "schema_version": "1.0",
+  "seed": 42,
+  "sequence_length": 128,
+  "stage": "coding_pretraining",
+  "status": "complete",
+  "steps": 150,
+  "tokens_seen": 260158,
+  "training_curve": [
+    {
+      "gradient_norm": 3.528191328048706,
+      "loss": 5.553037643432617,
+      "router_balance_loss": 0.0031664958223700523,
+      "seconds": 6.0311,
+      "step": 1,
+      "tokens": 1745,
+      "tokens_seen": 1745
+    },
+    {
+      "gradient_norm": 2.9585561752319336,
+      "loss": 4.943071365356445,
+      "router_balance_loss": 0.0027736262418329716,
+      "seconds": 4.0267,
+      "step": 2,
+      "tokens": 1777,
+      "tokens_seen": 3522
+    },
+    {
+      "gradient_norm": 2.6476850509643555,
+      "loss": 4.683141708374023,
+      "router_balance_loss": 0.004057825077325106,
+      "seconds": 3.3471,
+      "step": 3,
+      "tokens": 1780,
+      "tokens_seen": 5302
+    },
+    {
+      "gradient_norm": 2.5390915870666504,
+      "loss": 4.556039333343506,
+      "router_balance_loss": 0.007505577057600021,
+      "seconds": 4.0807,
+      "step": 4,
+      "tokens": 1770,
+      "tokens_seen": 7072
+    },
+    {
+      "gradient_norm": 2.496537208557129,
+      "loss": 4.448322772979736,
+      "router_balance_loss": 0.00822396855801344,
+      "seconds": 3.8025,
+      "step": 5,
+      "tokens": 1765,
+      "tokens_seen": 8837
+    },
+    {
+      "gradient_norm": 2.4084205627441406,
+      "loss": 4.356383800506592,
+      "router_balance_loss": 0.008190659806132317,
+      "seconds": 3.3046,
+      "step": 6,
+      "tokens": 1743,
+      "tokens_seen": 10580
+    },
+    {
+      "gradient_norm": 2.2738728523254395,
+      "loss": 4.294686794281006,
+      "router_balance_loss": 0.008459800854325294,
+      "seconds": 3.4173,
+      "step": 7,
+      "tokens": 1752,
+      "tokens_seen": 12332
+    },
+    {
+      "gradient_norm": 2.2802276611328125,
+      "loss": 4.181562900543213,
+      "router_balance_loss": 0.0076816147193312645,
+      "seconds": 3.548,
+      "step": 8,
+      "tokens": 1739,
+      "tokens_seen": 14071
+    },
+    {
+      "gradient_norm": 2.151456594467163,
+      "loss": 4.092679977416992,
+      "router_balance_loss": 0.009074393659830093,
+      "seconds": 3.288,
+      "step": 9,
+      "tokens": 1726,
+      "tokens_seen": 15797
+    },
+    {
+      "gradient_norm": 2.152512550354004,
+      "loss": 3.9641213417053223,
+      "router_balance_loss": 0.0077075897715985775,
+      "seconds": 3.3682,
+      "step": 10,
+      "tokens": 1716,
+      "tokens_seen": 17513
+    },
+    {
+      "gradient_norm": 2.0792806148529053,
+      "loss": 3.844721555709839,
+      "router_balance_loss": 0.008455215953290462,
+      "seconds": 3.4678,
+      "step": 11,
+      "tokens": 1739,
+      "tokens_seen": 19252
+    },
+    {
+      "gradient_norm": 2.015615224838257,
+      "loss": 3.738577127456665,
+      "router_balance_loss": 0.006250321865081787,
+      "seconds": 3.5099,
+      "step": 12,
+      "tokens": 1691,
+      "tokens_seen": 20943
+    },
+    {
+      "gradient_norm": 2.022064685821533,
+      "loss": 3.6168882846832275,
+      "router_balance_loss": 0.0052610719576478004,
+      "seconds": 3.6801,
+      "step": 13,
+      "tokens": 1694,
+      "tokens_seen": 22637
+    },
+    {
+      "gradient_norm": 2.0607285499572754,
+      "loss": 3.505204200744629,
+      "router_balance_loss": 0.005745124537497759,
+      "seconds": 3.7784,
+      "step": 14,
+      "tokens": 1775,
+      "tokens_seen": 24412
+    },
+    {
+      "gradient_norm": 2.0320844650268555,
+      "loss": 3.4252946376800537,
+      "router_balance_loss": 0.004803748801350594,
+      "seconds": 4.4516,
+      "step": 15,
+      "tokens": 1756,
+      "tokens_seen": 26168
+    },
+    {
+      "gradient_norm": 2.029306173324585,
+      "loss": 3.3206307888031006,
+      "router_balance_loss": 0.004970768000930548,
+      "seconds": 4.2685,
+      "step": 16,
+      "tokens": 1764,
+      "tokens_seen": 27932
+    },
+    {
+      "gradient_norm": 1.9231281280517578,
+      "loss": 3.226318597793579,
+      "router_balance_loss": 0.004555198363959789,
+      "seconds": 3.984,
+      "step": 17,
+      "tokens": 1760,
+      "tokens_seen": 29692
+    },
+    {
+      "gradient_norm": 1.8575397729873657,
+      "loss": 3.156061887741089,
+      "router_balance_loss": 0.00440564937889576,
+      "seconds": 3.9253,
+      "step": 18,
+      "tokens": 1776,
+      "tokens_seen": 31468
+    },
+    {
+      "gradient_norm": 1.9273093938827515,
+      "loss": 3.0730514526367188,
+      "router_balance_loss": 0.004467422142624855,
+      "seconds": 3.8889,
+      "step": 19,
+      "tokens": 1736,
+      "tokens_seen": 33204
+    },
+    {
+      "gradient_norm": 1.843385934829712,
+      "loss": 2.9825425148010254,
+      "router_balance_loss": 0.004714097827672958,
+      "seconds": 3.9718,
+      "step": 20,
+      "tokens": 1727,
+      "tokens_seen": 34931
+    },
+    {
+      "gradient_norm": 1.7523257732391357,
+      "loss": 2.9326560497283936,
+      "router_balance_loss": 0.0042563327588140965,
+      "seconds": 3.8094,
+      "step": 21,
+      "tokens": 1802,
+      "tokens_seen": 36733
+    },
+    {
+      "gradient_norm": 1.993004560470581,
+      "loss": 2.8428266048431396,
+      "router_balance_loss": 0.0033226548694074154,
+      "seconds": 4.2138,
+      "step": 22,
+      "tokens": 1677,
+      "tokens_seen": 38410
+    },
+    {
+      "gradient_norm": 1.8729122877120972,
+      "loss": 2.7326319217681885,
+      "router_balance_loss": 0.003348468104377389,
+      "seconds": 4.0034,
+      "step": 23,
+      "tokens": 1693,
+      "tokens_seen": 40103
+    },
+    {
+      "gradient_norm": 1.6656858921051025,
+      "loss": 2.7009129524230957,
+      "router_balance_loss": 0.002475261688232422,
+      "seconds": 4.4794,
+      "step": 24,
+      "tokens": 1681,
+      "tokens_seen": 41784
+    },
+    {
+      "gradient_norm": 1.9315378665924072,
+      "loss": 2.6434264183044434,
+      "router_balance_loss": 0.0025155774783343077,
+      "seconds": 3.9288,
+      "step": 25,
+      "tokens": 1755,
+      "tokens_seen": 43539
+    },
+    {
+      "gradient_norm": 1.7189210653305054,
+      "loss": 2.5492799282073975,
+      "router_balance_loss": 0.0037764674052596092,
+      "seconds": 3.879,
+      "step": 26,
+      "tokens": 1710,
+      "tokens_seen": 45249
+    },
+    {
+      "gradient_norm": 2.1795711517333984,
+      "loss": 2.5121068954467773,
+      "router_balance_loss": 0.0054109347984194756,
+      "seconds": 3.7606,
+      "step": 27,
+      "tokens": 1779,
+      "tokens_seen": 47028
+    },
+    {
+      "gradient_norm": 1.8029836416244507,
+      "loss": 2.440993309020996,
+      "router_balance_loss": 0.004265258088707924,
+      "seconds": 3.7926,
+      "step": 28,
+      "tokens": 1749,
+      "tokens_seen": 48777
+    },
+    {
+      "gradient_norm": 1.9428772926330566,
+      "loss": 2.3393545150756836,
+      "router_balance_loss": 0.005113618448376656,
+      "seconds": 3.8562,
+      "step": 29,
+      "tokens": 1666,
+      "tokens_seen": 50443
+    },
+    {
+      "gradient_norm": 1.795440673828125,
+      "loss": 2.3105597496032715,
+      "router_balance_loss": 0.00474895304068923,
+      "seconds": 3.7151,
+      "step": 30,
+      "tokens": 1718,
+      "tokens_seen": 52161
+    },
+    {
+      "gradient_norm": 1.8513638973236084,
+      "loss": 2.2838544845581055,
+      "router_balance_loss": 0.004799945745617151,
+      "seconds": 3.8067,
+      "step": 31,
+      "tokens": 1721,
+      "tokens_seen": 53882
+    },
+    {
+      "gradient_norm": 1.5503519773483276,
+      "loss": 2.225679874420166,
+      "router_balance_loss": 0.003772691823542118,
+      "seconds": 3.6828,
+      "step": 32,
+      "tokens": 1754,
+      "tokens_seen": 55636
+    },
+    {
+      "gradient_norm": 1.6483774185180664,
+      "loss": 2.198587417602539,
+      "router_balance_loss": 0.0037009583320468664,
+      "seconds": 3.7271,
+      "step": 33,
+      "tokens": 1791,
+      "tokens_seen": 57427
+    },
+    {
+      "gradient_norm": 1.6136187314987183,
+      "loss": 2.1155271530151367,
+      "router_balance_loss": 0.005585054401308298,
+      "seconds": 3.7339,
+      "step": 34,
+      "tokens": 1672,
+      "tokens_seen": 59099
+    },
+    {
+      "gradient_norm": 2.116297721862793,
+      "loss": 2.091709852218628,
+      "router_balance_loss": 0.00639762356877327,
+      "seconds": 3.6543,
+      "step": 35,
+      "tokens": 1747,
+      "tokens_seen": 60846
+    },
+    {
+      "gradient_norm": 1.9922926425933838,
+      "loss": 2.067049980163574,
+      "router_balance_loss": 0.0045694890432059765,
+      "seconds": 3.659,
+      "step": 36,
+      "tokens": 1771,
+      "tokens_seen": 62617
+    },
+    {
+      "gradient_norm": 2.369734525680542,
+      "loss": 2.0138003826141357,
+      "router_balance_loss": 0.003421582980081439,
+      "seconds": 3.9657,
+      "step": 37,
+      "tokens": 1719,
+      "tokens_seen": 64336
+    },
+    {
+      "gradient_norm": 1.7870851755142212,
+      "loss": 1.9699478149414062,
+      "router_balance_loss": 0.0042795585468411446,
+      "seconds": 4.1768,
+      "step": 38,
+      "tokens": 1748,
+      "tokens_seen": 66084
+    },
+    {
+      "gradient_norm": 2.050323009490967,
+      "loss": 1.9499232769012451,
+      "router_balance_loss": 0.005930206272751093,
+      "seconds": 3.7726,
+      "step": 39,
+      "tokens": 1766,
+      "tokens_seen": 67850
+    },
+    {
+      "gradient_norm": 1.8578375577926636,
+      "loss": 1.9602755308151245,
+      "router_balance_loss": 0.006706989835947752,
+      "seconds": 4.1824,
+      "step": 40,
+      "tokens": 1771,
+      "tokens_seen": 69621
+    },
+    {
+      "gradient_norm": 2.000807285308838,
+      "loss": 1.920291543006897,
+      "router_balance_loss": 0.005530348978936672,
+      "seconds": 3.4846,
+      "step": 41,
+      "tokens": 1794,
+      "tokens_seen": 71415
+    },
+    {
+      "gradient_norm": 2.369175434112549,
+      "loss": 1.8698209524154663,
+      "router_balance_loss": 0.005590478889644146,
+      "seconds": 3.6526,
+      "step": 42,
+      "tokens": 1711,
+      "tokens_seen": 73126
+    },
+    {
+      "gradient_norm": 2.4667508602142334,
+      "loss": 1.8281810283660889,
+      "router_balance_loss": 0.005490012001246214,
+      "seconds": 3.6971,
+      "step": 43,
+      "tokens": 1764,
+      "tokens_seen": 74890
+    },
+    {
+      "gradient_norm": 2.6155641078948975,
+      "loss": 1.806776523590088,
+      "router_balance_loss": 0.004297246225178242,
+      "seconds": 3.679,
+      "step": 44,
+      "tokens": 1754,
+      "tokens_seen": 76644
+    },
+    {
+      "gradient_norm": 1.5671521425247192,
+      "loss": 1.774390459060669,
+      "router_balance_loss": 0.004164532758295536,
+      "seconds": 3.8558,
+      "step": 45,
+      "tokens": 1704,
+      "tokens_seen": 78348
+    },
+    {
+      "gradient_norm": 4.0069260597229,
+      "loss": 1.7244983911514282,
+      "router_balance_loss": 0.003694030223414302,
+      "seconds": 3.8542,
+      "step": 46,
+      "tokens": 1731,
+      "tokens_seen": 80079
+    },
+    {
+      "gradient_norm": 2.6119465827941895,
+      "loss": 1.7244499921798706,
+      "router_balance_loss": 0.00323311286047101,
+      "seconds": 3.5477,
+      "step": 47,
+      "tokens": 1802,
+      "tokens_seen": 81881
+    },
+    {
+      "gradient_norm": 2.177682876586914,
+      "loss": 1.702547550201416,
+      "router_balance_loss": 0.003966295160353184,
+      "seconds": 3.6224,
+      "step": 48,
+      "tokens": 1745,
+      "tokens_seen": 83626
+    },
+    {
+      "gradient_norm": 3.243035316467285,
+      "loss": 1.6246416568756104,
+      "router_balance_loss": 0.004246484953910112,
+      "seconds": 3.8531,
+      "step": 49,
+      "tokens": 1728,
+      "tokens_seen": 85354
+    },
+    {
+      "gradient_norm": 1.3909224271774292,
+      "loss": 1.5955654382705688,
+      "router_balance_loss": 0.0037429481744766235,
+      "seconds": 3.586,
+      "step": 50,
+      "tokens": 1708,
+      "tokens_seen": 87062
+    },
+    {
+      "gradient_norm": 2.9112930297851562,
+      "loss": 1.5985156297683716,
+      "router_balance_loss": 0.002952719107270241,
+      "seconds": 3.6957,
+      "step": 51,
+      "tokens": 1807,
+      "tokens_seen": 88869
+    },
+    {
+      "gradient_norm": 2.072457790374756,
+      "loss": 1.6255813837051392,
+      "router_balance_loss": 0.0026645336765795946,
+      "seconds": 4.3124,
+      "step": 52,
+      "tokens": 1769,
+      "tokens_seen": 90638
+    },
+    {
+      "gradient_norm": 2.572551727294922,
+      "loss": 1.54099440574646,
+      "router_balance_loss": 0.0028876299038529396,
+      "seconds": 3.6669,
+      "step": 53,
+      "tokens": 1653,
+      "tokens_seen": 92291
+    },
+    {
+      "gradient_norm": 2.393353223800659,
+      "loss": 1.515515923500061,
+      "router_balance_loss": 0.002921164268627763,
+      "seconds": 3.5023,
+      "step": 54,
+      "tokens": 1684,
+      "tokens_seen": 93975
+    },
+    {
+      "gradient_norm": 2.41142201423645,
+      "loss": 1.4756309986114502,
+      "router_balance_loss": 0.004141794051975012,
+      "seconds": 4.4744,
+      "step": 55,
+      "tokens": 1793,
+      "tokens_seen": 95768
+    },
+    {
+      "gradient_norm": 2.1888821125030518,
+      "loss": 1.4944283962249756,
+      "router_balance_loss": 0.0037628640420734882,
+      "seconds": 4.1421,
+      "step": 56,
+      "tokens": 1714,
+      "tokens_seen": 97482
+    },
+    {
+      "gradient_norm": 3.555530071258545,
+      "loss": 1.472894549369812,
+      "router_balance_loss": 0.0025663957931101322,
+      "seconds": 3.6593,
+      "step": 57,
+      "tokens": 1632,
+      "tokens_seen": 99114
+    },
+    {
+      "gradient_norm": 3.0085482597351074,
+      "loss": 1.4416812658309937,
+      "router_balance_loss": 0.00248229643329978,
+      "seconds": 12.8133,
+      "step": 58,
+      "tokens": 1722,
+      "tokens_seen": 100836
+    },
+    {
+      "gradient_norm": 2.713247776031494,
+      "loss": 1.4221656322479248,
+      "router_balance_loss": 0.0023418625351041555,
+      "seconds": 11.4127,
+      "step": 59,
+      "tokens": 1749,
+      "tokens_seen": 102585
+    },
+    {
+      "gradient_norm": 3.56380295753479,
+      "loss": 1.3961727619171143,
+      "router_balance_loss": 0.003733397461473942,
+      "seconds": 3.6365,
+      "step": 60,
+      "tokens": 1683,
+      "tokens_seen": 104268
+    },
+    {
+      "gradient_norm": 1.6650381088256836,
+      "loss": 1.3987587690353394,
+      "router_balance_loss": 0.0033897787798196077,
+      "seconds": 3.6351,
+      "step": 61,
+      "tokens": 1748,
+      "tokens_seen": 106016
+    },
+    {
+      "gradient_norm": 3.257803440093994,
+      "loss": 1.387386679649353,
+      "router_balance_loss": 0.002998191863298416,
+      "seconds": 3.2006,
+      "step": 62,
+      "tokens": 1719,
+      "tokens_seen": 107735
+    },
+    {
+      "gradient_norm": 3.0047221183776855,
+      "loss": 1.3473035097122192,
+      "router_balance_loss": 0.0021874606609344482,
+      "seconds": 3.584,
+      "step": 63,
+      "tokens": 1746,
+      "tokens_seen": 109481
+    },
+    {
+      "gradient_norm": 2.8769173622131348,
+      "loss": 1.3182178735733032,
+      "router_balance_loss": 0.002826008480042219,
+      "seconds": 3.8375,
+      "step": 64,
+      "tokens": 1681,
+      "tokens_seen": 111162
+    },
+    {
+      "gradient_norm": 2.9624361991882324,
+      "loss": 1.3142188787460327,
+      "router_balance_loss": 0.004232448525726795,
+      "seconds": 3.6382,
+      "step": 65,
+      "tokens": 1633,
+      "tokens_seen": 112795
+    },
+    {
+      "gradient_norm": 2.9360179901123047,
+      "loss": 1.3150084018707275,
+      "router_balance_loss": 0.0027427554596215487,
+      "seconds": 2.8293,
+      "step": 66,
+      "tokens": 1765,
+      "tokens_seen": 114560
+    },
+    {
+      "gradient_norm": 2.2415177822113037,
+      "loss": 1.279223918914795,
+      "router_balance_loss": 0.0027597378939390182,
+      "seconds": 2.9403,
+      "step": 67,
+      "tokens": 1748,
+      "tokens_seen": 116308
+    },
+    {
+      "gradient_norm": 5.039389133453369,
+      "loss": 1.25080406665802,
+      "router_balance_loss": 0.0034414678812026978,
+      "seconds": 2.6874,
+      "step": 68,
+      "tokens": 1729,
+      "tokens_seen": 118037
+    },
+    {
+      "gradient_norm": 2.3411855697631836,
+      "loss": 1.223004937171936,
+      "router_balance_loss": 0.0034290736075490713,
+      "seconds": 3.1289,
+      "step": 69,
+      "tokens": 1648,
+      "tokens_seen": 119685
+    },
+    {
+      "gradient_norm": 4.297949314117432,
+      "loss": 1.185049295425415,
+      "router_balance_loss": 0.003206206252798438,
+      "seconds": 3.6617,
+      "step": 70,
+      "tokens": 1734,
+      "tokens_seen": 121419
+    },
+    {
+      "gradient_norm": 1.892612338066101,
+      "loss": 1.1956448554992676,
+      "router_balance_loss": 0.0032604187726974487,
+      "seconds": 3.6897,
+      "step": 71,
+      "tokens": 1824,
+      "tokens_seen": 123243
+    },
+    {
+      "gradient_norm": 2.8341474533081055,
+      "loss": 1.129074215888977,
+      "router_balance_loss": 0.0030118552967906,
+      "seconds": 3.7455,
+      "step": 72,
+      "tokens": 1763,
+      "tokens_seen": 125006
+    },
+    {
+      "gradient_norm": 1.9637917280197144,
+      "loss": 1.1305465698242188,
+      "router_balance_loss": 0.002362786792218685,
+      "seconds": 3.8433,
+      "step": 73,
+      "tokens": 1726,
+      "tokens_seen": 126732
+    },
+    {
+      "gradient_norm": 1.9459352493286133,
+      "loss": 1.0971568822860718,
+      "router_balance_loss": 0.0023513371124863625,
+      "seconds": 3.697,
+      "step": 74,
+      "tokens": 1747,
+      "tokens_seen": 128479
+    },
+    {
+      "gradient_norm": 1.9444105625152588,
+      "loss": 1.0728245973587036,
+      "router_balance_loss": 0.0018470933428034186,
+      "seconds": 3.3554,
+      "step": 75,
+      "tokens": 1773,
+      "tokens_seen": 130252
+    },
+    {
+      "gradient_norm": 2.582165241241455,
+      "loss": 1.0499998331069946,
+      "router_balance_loss": 0.001806075917556882,
+      "seconds": 3.2924,
+      "step": 76,
+      "tokens": 1758,
+      "tokens_seen": 132010
+    },
+    {
+      "gradient_norm": 3.6046652793884277,
+      "loss": 1.0831468105316162,
+      "router_balance_loss": 0.0021939456928521395,
+      "seconds": 2.9041,
+      "step": 77,
+      "tokens": 1772,
+      "tokens_seen": 133782
+    },
+    {
+      "gradient_norm": 3.9792888164520264,
+      "loss": 1.026275873184204,
+      "router_balance_loss": 0.003341310191899538,
+      "seconds": 2.752,
+      "step": 78,
+      "tokens": 1646,
+      "tokens_seen": 135428
+    },
+    {
+      "gradient_norm": 3.5269758701324463,
+      "loss": 1.0250221490859985,
+      "router_balance_loss": 0.004131376277655363,
+      "seconds": 2.6,
+      "step": 79,
+      "tokens": 1691,
+      "tokens_seen": 137119
+    },
+    {
+      "gradient_norm": 6.883643627166748,
+      "loss": 1.024488925933838,
+      "router_balance_loss": 0.0021782356780022383,
+      "seconds": 2.3595,
+      "step": 80,
+      "tokens": 1838,
+      "tokens_seen": 138957
+    },
+    {
+      "gradient_norm": 4.908446788787842,
+      "loss": 1.0129685401916504,
+      "router_balance_loss": 0.002040352439507842,
+      "seconds": 2.1128,
+      "step": 81,
+      "tokens": 1673,
+      "tokens_seen": 140630
+    },
+    {
+      "gradient_norm": 2.658057451248169,
+      "loss": 0.9424730539321899,
+      "router_balance_loss": 0.001382759539410472,
+      "seconds": 2.0839,
+      "step": 82,
+      "tokens": 1764,
+      "tokens_seen": 142394
+    },
+    {
+      "gradient_norm": 3.5401053428649902,
+      "loss": 1.0035489797592163,
+      "router_balance_loss": 0.0017864321125671268,
+      "seconds": 2.0502,
+      "step": 83,
+      "tokens": 1683,
+      "tokens_seen": 144077
+    },
+    {
+      "gradient_norm": 3.4679858684539795,
+      "loss": 0.9398673176765442,
+      "router_balance_loss": 0.00211277580820024,
+      "seconds": 2.3961,
+      "step": 84,
+      "tokens": 1687,
+      "tokens_seen": 145764
+    },
+    {
+      "gradient_norm": 3.9724843502044678,
+      "loss": 0.932050347328186,
+      "router_balance_loss": 0.0022327241022139788,
+      "seconds": 3.441,
+      "step": 85,
+      "tokens": 1671,
+      "tokens_seen": 147435
+    },
+    {
+      "gradient_norm": 1.9147146940231323,
+      "loss": 0.8728751540184021,
+      "router_balance_loss": 0.0016983549576252699,
+      "seconds": 3.3211,
+      "step": 86,
+      "tokens": 1664,
+      "tokens_seen": 149099
+    },
+    {
+      "gradient_norm": 5.598273277282715,
+      "loss": 0.9159066081047058,
+      "router_balance_loss": 0.0014552971115335822,
+      "seconds": 3.5385,
+      "step": 87,
+      "tokens": 1741,
+      "tokens_seen": 150840
+    },
+    {
+      "gradient_norm": 6.538373947143555,
+      "loss": 0.9212706089019775,
+      "router_balance_loss": 0.00197557732462883,
+      "seconds": 3.4204,
+      "step": 88,
+      "tokens": 1774,
+      "tokens_seen": 152614
+    },
+    {
+      "gradient_norm": 3.3803465366363525,
+      "loss": 0.8932806849479675,
+      "router_balance_loss": 0.0012361581902951002,
+      "seconds": 3.7882,
+      "step": 89,
+      "tokens": 1733,
+      "tokens_seen": 154347
+    },
+    {
+      "gradient_norm": 3.10756254196167,
+      "loss": 0.8379270434379578,
+      "router_balance_loss": 0.0013479517074301839,
+      "seconds": 3.8334,
+      "step": 90,
+      "tokens": 1734,
+      "tokens_seen": 156081
+    },
+    {
+      "gradient_norm": 4.800904273986816,
+      "loss": 0.8541160225868225,
+      "router_balance_loss": 0.000980101409368217,
+      "seconds": 3.6699,
+      "step": 91,
+      "tokens": 1786,
+      "tokens_seen": 157867
+    },
+    {
+      "gradient_norm": 1.6309009790420532,
+      "loss": 0.8369081616401672,
+      "router_balance_loss": 0.0013677836395800114,
+      "seconds": 3.5939,
+      "step": 92,
+      "tokens": 1722,
+      "tokens_seen": 159589
+    },
+    {
+      "gradient_norm": 3.926194906234741,
+      "loss": 0.8185463547706604,
+      "router_balance_loss": 0.0017596447141841054,
+      "seconds": 3.3677,
+      "step": 93,
+      "tokens": 1713,
+      "tokens_seen": 161302
+    },
+    {
+      "gradient_norm": 3.3506720066070557,
+      "loss": 0.7770925164222717,
+      "router_balance_loss": 0.0026025373954325914,
+      "seconds": 3.4466,
+      "step": 94,
+      "tokens": 1762,
+      "tokens_seen": 163064
+    },
+    {
+      "gradient_norm": 3.694169282913208,
+      "loss": 0.797210156917572,
+      "router_balance_loss": 0.0019449478713795543,
+      "seconds": 3.4844,
+      "step": 95,
+      "tokens": 1727,
+      "tokens_seen": 164791
+    },
+    {
+      "gradient_norm": 2.7951786518096924,
+      "loss": 0.7770137190818787,
+      "router_balance_loss": 0.0014959473628550768,
+      "seconds": 3.453,
+      "step": 96,
+      "tokens": 1762,
+      "tokens_seen": 166553
+    },
+    {
+      "gradient_norm": 2.972226142883301,
+      "loss": 0.7833172082901001,
+      "router_balance_loss": 0.0008888498414307833,
+      "seconds": 3.4301,
+      "step": 97,
+      "tokens": 1755,
+      "tokens_seen": 168308
+    },
+    {
+      "gradient_norm": 2.663865089416504,
+      "loss": 0.7410777807235718,
+      "router_balance_loss": 0.00085344078252092,
+      "seconds": 3.4177,
+      "step": 98,
+      "tokens": 1794,
+      "tokens_seen": 170102
+    },
+    {
+      "gradient_norm": 2.566948175430298,
+      "loss": 0.7106756567955017,
+      "router_balance_loss": 0.0009919670410454273,
+      "seconds": 3.7251,
+      "step": 99,
+      "tokens": 1703,
+      "tokens_seen": 171805
+    },
+    {
+      "gradient_norm": 2.0116114616394043,
+      "loss": 0.6816710233688354,
+      "router_balance_loss": 0.0012949471129104495,
+      "seconds": 4.0525,
+      "step": 100,
+      "tokens": 1743,
+      "tokens_seen": 173548
+    },
+    {
+      "gradient_norm": 4.323635578155518,
+      "loss": 0.7109174728393555,
+      "router_balance_loss": 0.0011981124989688396,
+      "seconds": 3.854,
+      "step": 101,
+      "tokens": 1809,
+      "tokens_seen": 175357
+    },
+    {
+      "gradient_norm": 2.4182047843933105,
+      "loss": 0.6657671928405762,
+      "router_balance_loss": 0.0013256841339170933,
+      "seconds": 3.5913,
+      "step": 102,
+      "tokens": 1837,
+      "tokens_seen": 177194
+    },
+    {
+      "gradient_norm": 2.8577511310577393,
+      "loss": 0.6876270771026611,
+      "router_balance_loss": 0.0010598072549328208,
+      "seconds": 3.3687,
+      "step": 103,
+      "tokens": 1776,
+      "tokens_seen": 178970
+    },
+    {
+      "gradient_norm": 4.868220329284668,
+      "loss": 0.684342622756958,
+      "router_balance_loss": 0.0007423404022119939,
+      "seconds": 3.4481,
+      "step": 104,
+      "tokens": 1691,
+      "tokens_seen": 180661
+    },
+    {
+      "gradient_norm": 3.1484618186950684,
+      "loss": 0.6609832644462585,
+      "router_balance_loss": 0.0008476411458104849,
+      "seconds": 3.3371,
+      "step": 105,
+      "tokens": 1660,
+      "tokens_seen": 182321
+    },
+    {
+      "gradient_norm": 3.6703319549560547,
+      "loss": 0.6399158239364624,
+      "router_balance_loss": 0.000619861064478755,
+      "seconds": 3.5104,
+      "step": 106,
+      "tokens": 1736,
+      "tokens_seen": 184057
+    },
+    {
+      "gradient_norm": 3.0683646202087402,
+      "loss": 0.666123628616333,
+      "router_balance_loss": 0.0010090041905641556,
+      "seconds": 3.5164,
+      "step": 107,
+      "tokens": 1663,
+      "tokens_seen": 185720
+    },
+    {
+      "gradient_norm": 4.413181304931641,
+      "loss": 0.6574545502662659,
+      "router_balance_loss": 0.0006671976880170405,
+      "seconds": 3.7609,
+      "step": 108,
+      "tokens": 1668,
+      "tokens_seen": 187388
+    },
+    {
+      "gradient_norm": 4.040635585784912,
+      "loss": 0.6351000666618347,
+      "router_balance_loss": 0.00043191350414417684,
+      "seconds": 3.8535,
+      "step": 109,
+      "tokens": 1818,
+      "tokens_seen": 189206
+    },
+    {
+      "gradient_norm": 3.116868734359741,
+      "loss": 0.6580184698104858,
+      "router_balance_loss": 0.0007910066051408648,
+      "seconds": 3.7737,
+      "step": 110,
+      "tokens": 1739,
+      "tokens_seen": 190945
+    },
+    {
+      "gradient_norm": 3.742614269256592,
+      "loss": 0.633367121219635,
+      "router_balance_loss": 0.0011061826953664422,
+      "seconds": 3.1922,
+      "step": 111,
+      "tokens": 1752,
+      "tokens_seen": 192697
+    },
+    {
+      "gradient_norm": 1.8376325368881226,
+      "loss": 0.5922308564186096,
+      "router_balance_loss": 0.0006937773432582617,
+      "seconds": 3.2885,
+      "step": 112,
+      "tokens": 1773,
+      "tokens_seen": 194470
+    },
+    {
+      "gradient_norm": 7.9810791015625,
+      "loss": 0.6406852602958679,
+      "router_balance_loss": 0.0003646985860541463,
+      "seconds": 3.2662,
+      "step": 113,
+      "tokens": 1755,
+      "tokens_seen": 196225
+    },
+    {
+      "gradient_norm": 5.073260307312012,
+      "loss": 0.6437709927558899,
+      "router_balance_loss": 0.0005241070757620037,
+      "seconds": 5.6138,
+      "step": 114,
+      "tokens": 1719,
+      "tokens_seen": 197944
+    },
+    {
+      "gradient_norm": 2.792294502258301,
+      "loss": 0.6235202550888062,
+      "router_balance_loss": 0.0006264515104703605,
+      "seconds": 4.9574,
+      "step": 115,
+      "tokens": 1631,
+      "tokens_seen": 199575
+    },
+    {
+      "gradient_norm": 4.245866775512695,
+      "loss": 0.5986777544021606,
+      "router_balance_loss": 0.0007492161821573973,
+      "seconds": 3.2811,
+      "step": 116,
+      "tokens": 1701,
+      "tokens_seen": 201276
+    },
+    {
+      "gradient_norm": 5.233936309814453,
+      "loss": 0.6482066512107849,
+      "router_balance_loss": 0.001115003484301269,
+      "seconds": 3.2127,
+      "step": 117,
+      "tokens": 1734,
+      "tokens_seen": 203010
+    },
+    {
+      "gradient_norm": 3.529181957244873,
+      "loss": 0.6006601452827454,
+      "router_balance_loss": 0.0009142598137259483,
+      "seconds": 3.1838,
+      "step": 118,
+      "tokens": 1702,
+      "tokens_seen": 204712
+    },
+    {
+      "gradient_norm": 4.478835105895996,
+      "loss": 0.6173704266548157,
+      "router_balance_loss": 0.0010045388480648398,
+      "seconds": 3.1857,
+      "step": 119,
+      "tokens": 1775,
+      "tokens_seen": 206487
+    },
+    {
+      "gradient_norm": 2.692694664001465,
+      "loss": 0.5734179019927979,
+      "router_balance_loss": 0.0010790751548483968,
+      "seconds": 3.1961,
+      "step": 120,
+      "tokens": 1765,
+      "tokens_seen": 208252
+    },
+    {
+      "gradient_norm": 2.0957553386688232,
+      "loss": 0.5524352788925171,
+      "router_balance_loss": 0.0010080105857923627,
+      "seconds": 3.2374,
+      "step": 121,
+      "tokens": 1676,
+      "tokens_seen": 209928
+    },
+    {
+      "gradient_norm": 3.5450778007507324,
+      "loss": 0.5284764170646667,
+      "router_balance_loss": 0.000825027993414551,
+      "seconds": 3.2344,
+      "step": 122,
+      "tokens": 1735,
+      "tokens_seen": 211663
+    },
+    {
+      "gradient_norm": 1.9663406610488892,
+      "loss": 0.5431673526763916,
+      "router_balance_loss": 0.0009069451480172575,
+      "seconds": 3.211,
+      "step": 123,
+      "tokens": 1813,
+      "tokens_seen": 213476
+    },
+    {
+      "gradient_norm": 3.8646953105926514,
+      "loss": 0.5433110594749451,
+      "router_balance_loss": 0.0007530003786087036,
+      "seconds": 3.2288,
+      "step": 124,
+      "tokens": 1753,
+      "tokens_seen": 215229
+    },
+    {
+      "gradient_norm": 3.6728715896606445,
+      "loss": 0.5285167098045349,
+      "router_balance_loss": 0.0007855570875108242,
+      "seconds": 3.2548,
+      "step": 125,
+      "tokens": 1693,
+      "tokens_seen": 216922
+    },
+    {
+      "gradient_norm": 2.767489194869995,
+      "loss": 0.5606262683868408,
+      "router_balance_loss": 0.0005714874132536352,
+      "seconds": 3.1936,
+      "step": 126,
+      "tokens": 1701,
+      "tokens_seen": 218623
+    },
+    {
+      "gradient_norm": 2.1780285835266113,
+      "loss": 0.5455583333969116,
+      "router_balance_loss": 0.00100131134968251,
+      "seconds": 3.2531,
+      "step": 127,
+      "tokens": 1705,
+      "tokens_seen": 220328
+    },
+    {
+      "gradient_norm": 3.156017541885376,
+      "loss": 0.5412698984146118,
+      "router_balance_loss": 0.0010025525698438287,
+      "seconds": 3.2099,
+      "step": 128,
+      "tokens": 1737,
+      "tokens_seen": 222065
+    },
+    {
+      "gradient_norm": 1.6221188306808472,
+      "loss": 0.5143918991088867,
+      "router_balance_loss": 0.0009245453402400017,
+      "seconds": 3.2142,
+      "step": 129,
+      "tokens": 1689,
+      "tokens_seen": 223754
+    },
+    {
+      "gradient_norm": 1.956861138343811,
+      "loss": 0.5056281089782715,
+      "router_balance_loss": 0.0011268192902207375,
+      "seconds": 3.2697,
+      "step": 130,
+      "tokens": 1765,
+      "tokens_seen": 225519
+    },
+    {
+      "gradient_norm": 1.9821563959121704,
+      "loss": 0.5198301672935486,
+      "router_balance_loss": 0.0011584305902943015,
+      "seconds": 3.2185,
+      "step": 131,
+      "tokens": 1691,
+      "tokens_seen": 227210
+    },
+    {
+      "gradient_norm": 1.620996117591858,
+      "loss": 0.49386897683143616,
+      "router_balance_loss": 0.0013413728447631001,
+      "seconds": 3.2208,
+      "step": 132,
+      "tokens": 1716,
+      "tokens_seen": 228926
+    },
+    {
+      "gradient_norm": 2.350342035293579,
+      "loss": 0.4914012551307678,
+      "router_balance_loss": 0.0007188550080172718,
+      "seconds": 3.2263,
+      "step": 133,
+      "tokens": 1792,
+      "tokens_seen": 230718
+    },
+    {
+      "gradient_norm": 2.223688840866089,
+      "loss": 0.4812118113040924,
+      "router_balance_loss": 0.0006133615388534963,
+      "seconds": 3.2616,
+      "step": 134,
+      "tokens": 1742,
+      "tokens_seen": 232460
+    },
+    {
+      "gradient_norm": 2.3837332725524902,
+      "loss": 0.47715461254119873,
+      "router_balance_loss": 0.0007784633198752999,
+      "seconds": 3.2132,
+      "step": 135,
+      "tokens": 1718,
+      "tokens_seen": 234178
+    },
+    {
+      "gradient_norm": 1.8569308519363403,
+      "loss": 0.46601149439811707,
+      "router_balance_loss": 0.0006534799467772245,
+      "seconds": 3.2031,
+      "step": 136,
+      "tokens": 1744,
+      "tokens_seen": 235922
+    },
+    {
+      "gradient_norm": 1.3318344354629517,
+      "loss": 0.4535621106624603,
+      "router_balance_loss": 0.0006116677541285753,
+      "seconds": 3.2302,
+      "step": 137,
+      "tokens": 1774,
+      "tokens_seen": 237696
+    },
+    {
+      "gradient_norm": 1.8665287494659424,
+      "loss": 0.45679330825805664,
+      "router_balance_loss": 0.00047553167678415775,
+      "seconds": 3.1715,
+      "step": 138,
+      "tokens": 1739,
+      "tokens_seen": 239435
+    },
+    {
+      "gradient_norm": 3.788973331451416,
+      "loss": 0.46792757511138916,
+      "router_balance_loss": 0.0005724118673242629,
+      "seconds": 3.1841,
+      "step": 139,
+      "tokens": 1740,
+      "tokens_seen": 241175
+    },
+    {
+      "gradient_norm": 1.8138775825500488,
+      "loss": 0.451292484998703,
+      "router_balance_loss": 0.0005392440361902118,
+      "seconds": 3.1813,
+      "step": 140,
+      "tokens": 1730,
+      "tokens_seen": 242905
+    },
+    {
+      "gradient_norm": 1.603489875793457,
+      "loss": 0.4351375102996826,
+      "router_balance_loss": 0.0006624733796343207,
+      "seconds": 3.2397,
+      "step": 141,
+      "tokens": 1808,
+      "tokens_seen": 244713
+    },
+    {
+      "gradient_norm": 1.0436389446258545,
+      "loss": 0.42668306827545166,
+      "router_balance_loss": 0.0007612587069161236,
+      "seconds": 3.2141,
+      "step": 142,
+      "tokens": 1668,
+      "tokens_seen": 246381
+    },
+    {
+      "gradient_norm": 2.176754951477051,
+      "loss": 0.45233410596847534,
+      "router_balance_loss": 0.0005689464160241187,
+      "seconds": 3.2256,
+      "step": 143,
+      "tokens": 1760,
+      "tokens_seen": 248141
+    },
+    {
+      "gradient_norm": 0.9101296663284302,
+      "loss": 0.4308684766292572,
+      "router_balance_loss": 0.0007269930792972445,
+      "seconds": 3.1937,
+      "step": 144,
+      "tokens": 1695,
+      "tokens_seen": 249836
+    },
+    {
+      "gradient_norm": 2.211263656616211,
+      "loss": 0.45035025477409363,
+      "router_balance_loss": 0.0010419684695079923,
+      "seconds": 3.1842,
+      "step": 145,
+      "tokens": 1608,
+      "tokens_seen": 251444
+    },
+    {
+      "gradient_norm": 1.67429780960083,
+      "loss": 0.4165690243244171,
+      "router_balance_loss": 0.0011704381322488189,
+      "seconds": 2.9948,
+      "step": 146,
+      "tokens": 1760,
+      "tokens_seen": 253204
+    },
+    {
+      "gradient_norm": 1.9117605686187744,
+      "loss": 0.42917725443840027,
+      "router_balance_loss": 0.0008181233424693346,
+      "seconds": 2.299,
+      "step": 147,
+      "tokens": 1735,
+      "tokens_seen": 254939
+    },
+    {
+      "gradient_norm": 2.6539146900177,
+      "loss": 0.45900920033454895,
+      "router_balance_loss": 0.0006629241397604346,
+      "seconds": 2.2033,
+      "step": 148,
+      "tokens": 1731,
+      "tokens_seen": 256670
+    },
+    {
+      "gradient_norm": 2.369112491607666,
+      "loss": 0.4310583472251892,
+      "router_balance_loss": 0.0006296259816735983,
+      "seconds": 2.2081,
+      "step": 149,
+      "tokens": 1729,
+      "tokens_seen": 258399
+    },
+    {
+      "gradient_norm": 2.38728666305542,
+      "loss": 0.4300614893436432,
+      "router_balance_loss": 0.0006316786748357117,
+      "seconds": 2.771,
+      "step": 150,
+      "tokens": 1759,
+      "tokens_seen": 260158
+    }
+  ]
+}

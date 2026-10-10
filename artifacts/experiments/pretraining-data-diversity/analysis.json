@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "source": "artifacts\\experiments\\pretraining-data-diversity\\results.json",
+  "comparisons": [
+    {
+      "diversity_left": 8,
+      "diversity_right": 32,
+      "seeds": [
+        11,
+        22
+      ],
+      "left_accuracy": [
+        0.30427350427350425,
+        0.2547008547008547
+      ],
+      "right_accuracy": [
+        0.24273504273504273,
+        0.24615384615384617
+      ],
+      "mean_difference": 0.035042735042735015,
+      "differences": [
+        0.061538461538461514,
+        0.008547008547008517
+      ],
+      "exact_sign_test_p": 0.5,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "diversity_left": 8,
+      "diversity_right": 88,
+      "seeds": [
+        11,
+        22
+      ],
+      "left_accuracy": [
+        0.30427350427350425,
+        0.2547008547008547
+      ],
+      "right_accuracy": [
+        0.24615384615384617,
+        0.252991452991453
+      ],
+      "mean_difference": 0.02991452991452989,
+      "differences": [
+        0.05811965811965808,
+        0.0017094017094017033
+      ],
+      "exact_sign_test_p": 0.5,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "diversity_left": 32,
+      "diversity_right": 88,
+      "seeds": [
+        11,
+        22
+      ],
+      "left_accuracy": [
+        0.24273504273504273,
+        0.24615384615384617
+      ],
+      "right_accuracy": [
+        0.24615384615384617,
+        0.252991452991453
+      ],
+      "mean_difference": -0.005128205128205124,
+      "differences": [
+        -0.0034188034188034344,
+        -0.006837606837606813
+      ],
+      "exact_sign_test_p": 0.5,
+      "holm_adjusted_p": 1.0
+    }
+  ],
+  "note": "Seed-level exact sign test. Seed counts are small; treat p-values as descriptive."
+}

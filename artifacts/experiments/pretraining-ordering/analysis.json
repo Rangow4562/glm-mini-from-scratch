@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "source": "artifacts\\experiments\\pretraining-ordering\\results.json",
+  "comparisons": [
+    {
+      "arm_left": "blocked",
+      "arm_right": "interleaved",
+      "seeds": [
+        11,
+        22
+      ],
+      "left_accuracy": [
+        0.41367521367521365,
+        0.3606837606837607
+      ],
+      "right_accuracy": [
+        0.48034188034188036,
+        0.4717948717948718
+      ],
+      "mean_difference": -0.0888888888888889,
+      "differences": [
+        -0.06666666666666671,
+        -0.1111111111111111
+      ],
+      "exact_sign_test_p": 0.5
+    },
+    {
+      "arm_left": "curriculum",
+      "arm_right": "interleaved",
+      "seeds": [
+        11,
+        22
+      ],
+      "left_accuracy": [
+        0.4393162393162393,
+        0.3623931623931624
+      ],
+      "right_accuracy": [
+        0.48034188034188036,
+        0.4717948717948718
+      ],
+      "mean_difference": -0.07521367521367522,
+      "differences": [
+        -0.041025641025641046,
+        -0.1094017094017094
+      ],
+      "exact_sign_test_p": 0.5
+    }
+  ],
+  "note": "Seed-level exact sign test against the interleaved arm. Seed counts are small; treat p-values as descriptive."
+}

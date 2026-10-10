@@ -1,0 +1,174 @@
+{
+  "by_family": {
+    "absolute": {
+      "solved": 1,
+      "tasks": 1,
+      "tests_passed": 3,
+      "tests_total": 3
+    },
+    "even": {
+      "solved": 0,
+      "tasks": 1,
+      "tests_passed": 0,
+      "tests_total": 3
+    },
+    "list_sum": {
+      "solved": 1,
+      "tasks": 1,
+      "tests_passed": 3,
+      "tests_total": 3
+    },
+    "nonnegative": {
+      "solved": 1,
+      "tasks": 1,
+      "tests_passed": 3,
+      "tests_total": 3
+    },
+    "reverse": {
+      "solved": 1,
+      "tasks": 1,
+      "tests_passed": 3,
+      "tests_total": 3
+    },
+    "square": {
+      "solved": 1,
+      "tasks": 1,
+      "tests_passed": 3,
+      "tests_total": 3
+    }
+  },
+  "checkpoint": "runs\\pretrain-001\\checkpoint-0150",
+  "checkpoint_sha256": "c1197e5a01df2a16e10755a1ebe8f3afec7ba4e4625d7cd03558882502e8b586",
+  "elapsed_seconds": 12.153,
+  "episodes": [
+    {
+      "evaluation": {
+        "message": "",
+        "pass_fraction": 1.0,
+        "passed": true,
+        "status": "passed",
+        "tests_passed": 3,
+        "tests_total": 3
+      },
+      "family": "square",
+      "generated_completion": "\n    return x * x\n",
+      "generated_tokens": 18,
+      "hit_token_cap": false,
+      "prompt": "# Complete this Python function.\n# Multiply x by itself.\ndef square_hvcxrov(x):",
+      "reference_completion": "\n    return x * x\n",
+      "task_id": "confirm-square-000"
+    },
+    {
+      "evaluation": {
+        "message": "",
+        "pass_fraction": 1.0,
+        "passed": true,
+        "status": "passed",
+        "tests_passed": 3,
+        "tests_total": 3
+      },
+      "family": "absolute",
+      "generated_completion": "\n    return -x if x < 0 else x\n",
+      "generated_tokens": 31,
+      "hit_token_cap": false,
+      "prompt": "# Complete this Python function.\n# Make a negative x positive.\ndef absolute_rpxnino(x):",
+      "reference_completion": "\n    return -x if x < 0 else x\n",
+      "task_id": "confirm-absolute-000"
+    },
+    {
+      "evaluation": {
+        "message": "",
+        "pass_fraction": 1.0,
+        "passed": true,
+        "status": "passed",
+        "tests_passed": 3,
+        "tests_total": 3
+      },
+      "family": "nonnegative",
+      "generated_completion": "\n    return x if x > 0 else 0\n",
+      "generated_tokens": 30,
+      "hit_token_cap": false,
+      "prompt": "# Complete this Python function.\n# Return zero when x is negative.\ndef nonnegative_swjpruv(x):",
+      "reference_completion": "\n    return x if x > 0 else 0\n",
+      "task_id": "confirm-nonnegative-000"
+    },
+    {
+      "evaluation": {
+        "message": "expected 'else' after 'if' expression (<unknown>, line 4)",
+        "pass_fraction": 0.0,
+        "passed": false,
+        "status": "invalid",
+        "tests_passed": 0,
+        "tests_total": 3
+      },
+      "family": "even",
+      "generated_completion": "\n    return x if x = 0 else 0\n",
+      "generated_tokens": 31,
+      "hit_token_cap": false,
+      "prompt": "# Complete this Python function.\n# Return whether x is even.\ndef even_zfsvekw(x):",
+      "reference_completion": "\n    return x % 2 == 0\n",
+      "task_id": "confirm-even-000"
+    },
+    {
+      "evaluation": {
+        "message": "",
+        "pass_fraction": 1.0,
+        "passed": true,
+        "status": "passed",
+        "tests_passed": 3,
+        "tests_total": 3
+      },
+      "family": "reverse",
+      "generated_completion": "\n    return text[::-1]\n",
+      "generated_tokens": 23,
+      "hit_token_cap": false,
+      "prompt": "# Complete this Python function.\n# Reverse the string.\ndef reverse_ulniuey(text):",
+      "reference_completion": "\n    return text[::-1]\n",
+      "task_id": "confirm-reverse-000"
+    },
+    {
+      "evaluation": {
+        "message": "",
+        "pass_fraction": 1.0,
+        "passed": true,
+        "status": "passed",
+        "tests_passed": 3,
+        "tests_total": 3
+      },
+      "family": "list_sum",
+      "generated_completion": "\n    return sum(values)\n",
+      "generated_tokens": 24,
+      "hit_token_cap": false,
+      "prompt": "# Complete this Python function.\n# Return the sum of values.\ndef list_sum_xzxzscy(values):",
+      "reference_completion": "\n    return sum(values)\n",
+      "task_id": "confirm-list_sum-000"
+    }
+  ],
+  "inference": {
+    "families": [
+      "absolute",
+      "even",
+      "list_sum",
+      "nonnegative",
+      "reverse",
+      "square"
+    ],
+    "greedy": true,
+    "max_new_tokens": 48,
+    "seed": 2026
+  },
+  "peak_vram_gib": null,
+  "schema_version": "1.0",
+  "split": "confirm",
+  "status": "complete",
+  "summary": {
+    "pass_at_1": 0.8333333333333334,
+    "tasks_solved": 5,
+    "tasks_total": 6,
+    "test_accuracy": 0.8333333333333334,
+    "tests_passed": 15,
+    "tests_total": 18,
+    "token_cap_hits": 0,
+    "valid_programs": 5
+  }
+}

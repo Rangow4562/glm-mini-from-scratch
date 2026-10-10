@@ -1,0 +1,883 @@
+{
+  "schema_version": "1.0",
+  "status": "complete",
+  "research_question": "At fixed compute, does more unique program structure improve held-out compositional code prediction?",
+  "independent_variable": "number of unique training expression structures",
+  "controlled": [
+    "model",
+    "initialization within seed",
+    "optimizer",
+    "steps",
+    "batch size",
+    "tokenizer",
+    "evaluation set"
+  ],
+  "structural_holdout": [
+    [
+      "neg",
+      "neg",
+      "add"
+    ],
+    [
+      "neg",
+      "add",
+      "abs"
+    ],
+    [
+      "sub",
+      "neg",
+      "add"
+    ],
+    [
+      "sub",
+      "sub",
+      "mul"
+    ],
+    [
+      "abs",
+      "sub",
+      "neg"
+    ],
+    [
+      "abs",
+      "sub",
+      "sub"
+    ],
+    [
+      "sub",
+      "add",
+      "neg"
+    ],
+    [
+      "abs",
+      "add",
+      "neg"
+    ],
+    [
+      "add",
+      "abs",
+      "abs"
+    ],
+    [
+      "neg",
+      "add",
+      "add"
+    ],
+    [
+      "sub",
+      "add",
+      "mul"
+    ],
+    [
+      "abs",
+      "mul",
+      "add"
+    ],
+    [
+      "neg",
+      "neg",
+      "abs"
+    ],
+    [
+      "add",
+      "abs",
+      "mul"
+    ],
+    [
+      "neg",
+      "mul",
+      "add"
+    ],
+    [
+      "abs",
+      "neg",
+      "add"
+    ],
+    [
+      "add",
+      "abs",
+      "neg"
+    ],
+    [
+      "abs",
+      "abs",
+      "mul"
+    ],
+    [
+      "neg",
+      "sub",
+      "add"
+    ],
+    [
+      "sub",
+      "mul",
+      "mul"
+    ],
+    [
+      "abs",
+      "neg",
+      "sub"
+    ],
+    [
+      "mul",
+      "neg",
+      "neg"
+    ],
+    [
+      "abs",
+      "neg",
+      "mul"
+    ],
+    [
+      "add",
+      "sub",
+      "neg"
+    ],
+    [
+      "add",
+      "abs",
+      "sub"
+    ],
+    [
+      "sub",
+      "sub",
+      "neg"
+    ],
+    [
+      "add",
+      "mul",
+      "abs"
+    ],
+    [
+      "neg",
+      "add",
+      "neg"
+    ],
+    [
+      "mul",
+      "mul",
+      "abs"
+    ],
+    [
+      "mul",
+      "mul",
+      "sub"
+    ],
+    [
+      "mul",
+      "add",
+      "add"
+    ],
+    [
+      "mul",
+      "neg",
+      "add"
+    ]
+  ],
+  "device": "cpu",
+  "steps": 40,
+  "batch_size": 16,
+  "learning_rate": 0.0008,
+  "diversities": [
+    8,
+    32,
+    88
+  ],
+  "seeds": [
+    11,
+    22
+  ],
+  "elapsed_seconds": 36.201,
+  "runs": [
+    {
+      "diversity": 8,
+      "seed": 11,
+      "steps": 40,
+      "batch_size": 16,
+      "tokens_seen": 61414,
+      "elapsed_seconds": 4.18,
+      "parameter_counts": {
+        "total": 248412,
+        "active_per_token_estimate": 123996
+      },
+      "before": {
+        "target_loss": 5.494039256756122,
+        "target_perplexity": 243.23772486632504,
+        "target_byte_accuracy": 0.1111111111111111,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 3)\n",
+            "teacher_forced_argmax": " ((-(-x)) + 3)\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 4))\n",
+            "teacher_forced_argmax": " abs(((-x) + 4))\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 3)) + 4)\n",
+            "teacher_forced_argmax": " ((-(x - 3)) + 4)\n",
+            "exact": false
+          }
+        ]
+      },
+      "after": {
+        "target_loss": 3.7465642399258083,
+        "target_perplexity": 42.37524044597477,
+        "target_byte_accuracy": 0.30427350427350425,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 3)\n",
+            "teacher_forced_argmax": " (( (         ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 4))\n",
+            "teacher_forced_argmax": "    (((         ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 3)) + 4)\n",
+            "teacher_forced_argmax": " (( (            ",
+            "exact": false
+          }
+        ]
+      },
+      "training_curve": [
+        {
+          "step": 1,
+          "training_loss": 5.533731937408447,
+          "tokens_seen": 1584
+        },
+        {
+          "step": 10,
+          "training_loss": 4.928295612335205,
+          "tokens_seen": 15444
+        },
+        {
+          "step": 20,
+          "training_loss": 4.444964408874512,
+          "tokens_seen": 30804
+        },
+        {
+          "step": 30,
+          "training_loss": 4.021503925323486,
+          "tokens_seen": 46169
+        },
+        {
+          "step": 40,
+          "training_loss": 3.677943468093872,
+          "tokens_seen": 61414
+        }
+      ]
+    },
+    {
+      "diversity": 8,
+      "seed": 22,
+      "steps": 40,
+      "batch_size": 16,
+      "tokens_seen": 61549,
+      "elapsed_seconds": 3.57,
+      "parameter_counts": {
+        "total": 248412,
+        "active_per_token_estimate": 123996
+      },
+      "before": {
+        "target_loss": 5.492443073305309,
+        "target_perplexity": 242.84978253121426,
+        "target_byte_accuracy": 0.1111111111111111,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 5)\n",
+            "teacher_forced_argmax": " ((-(-x)) + 5)\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 3))\n",
+            "teacher_forced_argmax": " abs(((-x) + 3))\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 2)) + 5)\n",
+            "teacher_forced_argmax": " ((-(x - 2)) + 5)\n",
+            "exact": false
+          }
+        ]
+      },
+      "after": {
+        "target_loss": 3.753676244132539,
+        "target_perplexity": 42.677687562039914,
+        "target_byte_accuracy": 0.2547008547008547,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 5)\n",
+            "teacher_forced_argmax": " (( (          ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 3))\n",
+            "teacher_forced_argmax": "    (((          ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 2)) + 5)\n",
+            "teacher_forced_argmax": " (( (             ",
+            "exact": false
+          }
+        ]
+      },
+      "training_curve": [
+        {
+          "step": 1,
+          "training_loss": 5.5546393394470215,
+          "tokens_seen": 1583
+        },
+        {
+          "step": 10,
+          "training_loss": 4.940153121948242,
+          "tokens_seen": 15341
+        },
+        {
+          "step": 20,
+          "training_loss": 4.464462757110596,
+          "tokens_seen": 30660
+        },
+        {
+          "step": 30,
+          "training_loss": 4.025524139404297,
+          "tokens_seen": 46144
+        },
+        {
+          "step": 40,
+          "training_loss": 3.666248321533203,
+          "tokens_seen": 61549
+        }
+      ]
+    },
+    {
+      "diversity": 32,
+      "seed": 11,
+      "steps": 40,
+      "batch_size": 16,
+      "tokens_seen": 62369,
+      "elapsed_seconds": 4.565,
+      "parameter_counts": {
+        "total": 248412,
+        "active_per_token_estimate": 123996
+      },
+      "before": {
+        "target_loss": 5.494039256756122,
+        "target_perplexity": 243.23772486632504,
+        "target_byte_accuracy": 0.1111111111111111,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 3)\n",
+            "teacher_forced_argmax": " ((-(-x)) + 3)\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 4))\n",
+            "teacher_forced_argmax": " abs(((-x) + 4))\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 3)) + 4)\n",
+            "teacher_forced_argmax": " ((-(x - 3)) + 4)\n",
+            "exact": false
+          }
+        ]
+      },
+      "after": {
+        "target_loss": 3.747341347555829,
+        "target_perplexity": 42.40818336708913,
+        "target_byte_accuracy": 0.24273504273504273,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 3)\n",
+            "teacher_forced_argmax": "              ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 4))\n",
+            "teacher_forced_argmax": "                ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 3)) + 4)\n",
+            "teacher_forced_argmax": "                 ",
+            "exact": false
+          }
+        ]
+      },
+      "training_curve": [
+        {
+          "step": 1,
+          "training_loss": 5.538051605224609,
+          "tokens_seen": 1541
+        },
+        {
+          "step": 10,
+          "training_loss": 4.924594402313232,
+          "tokens_seen": 15682
+        },
+        {
+          "step": 20,
+          "training_loss": 4.437792778015137,
+          "tokens_seen": 31301
+        },
+        {
+          "step": 30,
+          "training_loss": 4.018865585327148,
+          "tokens_seen": 46878
+        },
+        {
+          "step": 40,
+          "training_loss": 3.674622058868408,
+          "tokens_seen": 62369
+        }
+      ]
+    },
+    {
+      "diversity": 32,
+      "seed": 22,
+      "steps": 40,
+      "batch_size": 16,
+      "tokens_seen": 62116,
+      "elapsed_seconds": 4.797,
+      "parameter_counts": {
+        "total": 248412,
+        "active_per_token_estimate": 123996
+      },
+      "before": {
+        "target_loss": 5.492443073305309,
+        "target_perplexity": 242.84978253121426,
+        "target_byte_accuracy": 0.1111111111111111,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 5)\n",
+            "teacher_forced_argmax": " ((-(-x)) + 5)\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 3))\n",
+            "teacher_forced_argmax": " abs(((-x) + 3))\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 2)) + 5)\n",
+            "teacher_forced_argmax": " ((-(x - 2)) + 5)\n",
+            "exact": false
+          }
+        ]
+      },
+      "after": {
+        "target_loss": 3.7256472481621636,
+        "target_perplexity": 41.498083612657545,
+        "target_byte_accuracy": 0.24615384615384617,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 5)\n",
+            "teacher_forced_argmax": " (( (          ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 3))\n",
+            "teacher_forced_argmax": "    (((          ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 2)) + 5)\n",
+            "teacher_forced_argmax": " (                ",
+            "exact": false
+          }
+        ]
+      },
+      "training_curve": [
+        {
+          "step": 1,
+          "training_loss": 5.5578999519348145,
+          "tokens_seen": 1553
+        },
+        {
+          "step": 10,
+          "training_loss": 4.939474582672119,
+          "tokens_seen": 15555
+        },
+        {
+          "step": 20,
+          "training_loss": 4.467263698577881,
+          "tokens_seen": 31005
+        },
+        {
+          "step": 30,
+          "training_loss": 4.031785011291504,
+          "tokens_seen": 46574
+        },
+        {
+          "step": 40,
+          "training_loss": 3.6829323768615723,
+          "tokens_seen": 62116
+        }
+      ]
+    },
+    {
+      "diversity": 88,
+      "seed": 11,
+      "steps": 40,
+      "batch_size": 16,
+      "tokens_seen": 61996,
+      "elapsed_seconds": 7.935,
+      "parameter_counts": {
+        "total": 248412,
+        "active_per_token_estimate": 123996
+      },
+      "before": {
+        "target_loss": 5.494039256756122,
+        "target_perplexity": 243.23772486632504,
+        "target_byte_accuracy": 0.1111111111111111,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 3)\n",
+            "teacher_forced_argmax": " ((-(-x)) + 3)\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 4))\n",
+            "teacher_forced_argmax": " abs(((-x) + 4))\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 3)) + 4)\n",
+            "teacher_forced_argmax": " ((-(x - 3)) + 4)\n",
+            "exact": false
+          }
+        ]
+      },
+      "after": {
+        "target_loss": 3.728768334021935,
+        "target_perplexity": 41.6278050251585,
+        "target_byte_accuracy": 0.24615384615384617,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 3)\n",
+            "teacher_forced_argmax": "              ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 4))\n",
+            "teacher_forced_argmax": "                ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 3)) + 4)\n",
+            "teacher_forced_argmax": "                 ",
+            "exact": false
+          }
+        ]
+      },
+      "training_curve": [
+        {
+          "step": 1,
+          "training_loss": 5.538051605224609,
+          "tokens_seen": 1541
+        },
+        {
+          "step": 10,
+          "training_loss": 4.9304633140563965,
+          "tokens_seen": 15512
+        },
+        {
+          "step": 20,
+          "training_loss": 4.447452545166016,
+          "tokens_seen": 30951
+        },
+        {
+          "step": 30,
+          "training_loss": 4.027126312255859,
+          "tokens_seen": 46510
+        },
+        {
+          "step": 40,
+          "training_loss": 3.6907958984375,
+          "tokens_seen": 61996
+        }
+      ]
+    },
+    {
+      "diversity": 88,
+      "seed": 22,
+      "steps": 40,
+      "batch_size": 16,
+      "tokens_seen": 61826,
+      "elapsed_seconds": 8.216,
+      "parameter_counts": {
+        "total": 248412,
+        "active_per_token_estimate": 123996
+      },
+      "before": {
+        "target_loss": 5.492443073305309,
+        "target_perplexity": 242.84978253121426,
+        "target_byte_accuracy": 0.1111111111111111,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 5)\n",
+            "teacher_forced_argmax": " ((-(-x)) + 5)\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 3))\n",
+            "teacher_forced_argmax": " abs(((-x) + 3))\n",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 2)) + 5)\n",
+            "teacher_forced_argmax": " ((-(x - 2)) + 5)\n",
+            "exact": false
+          }
+        ]
+      },
+      "after": {
+        "target_loss": 3.721612552496103,
+        "target_perplexity": 41.3309887896097,
+        "target_byte_accuracy": 0.252991452991453,
+        "target_exact_accuracy": 0.0,
+        "examples": [
+          {
+            "structure": [
+              "neg",
+              "neg",
+              "add"
+            ],
+            "target": "((-(-x)) + 5)\n",
+            "teacher_forced_argmax": " (( (          ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "neg",
+              "add",
+              "abs"
+            ],
+            "target": "abs(((-x) + 3))\n",
+            "teacher_forced_argmax": "    (((          ",
+            "exact": false
+          },
+          {
+            "structure": [
+              "sub",
+              "neg",
+              "add"
+            ],
+            "target": "((-(x - 2)) + 5)\n",
+            "teacher_forced_argmax": " (( (             ",
+            "exact": false
+          }
+        ]
+      },
+      "training_curve": [
+        {
+          "step": 1,
+          "training_loss": 5.5578999519348145,
+          "tokens_seen": 1553
+        },
+        {
+          "step": 10,
+          "training_loss": 4.946649074554443,
+          "tokens_seen": 15444
+        },
+        {
+          "step": 20,
+          "training_loss": 4.461528301239014,
+          "tokens_seen": 30858
+        },
+        {
+          "step": 30,
+          "training_loss": 4.043510913848877,
+          "tokens_seen": 46358
+        },
+        {
+          "step": 40,
+          "training_loss": 3.6935789585113525,
+          "tokens_seen": 61826
+        }
+      ]
+    }
+  ]
+}

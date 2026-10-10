@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLM-Style Model From Scratch — Recursive Self-Improvement</title>
+<style>
+  :root {
+    --bg: #171714; --ink: #f4f0e8; --muted: #aaa69d; --grid: #353530;
+    --accent: #d97757; --accent2: #7aa2c9; --accent3: #9eb67b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: "Segoe UI", Arial, sans-serif; overflow: hidden;
+  }
+  #deck { position: relative; height: 100vh; }
+  .slide {
+    position: absolute; inset: 0; display: none;
+    flex-direction: column; justify-content: center; align-items: center;
+    padding: 6vh 10vw; text-align: center;
+  }
+  .slide.active { display: flex; animation: fade .35s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  h1 { font-size: 3.2rem; line-height: 1.15; margin-bottom: 1.2rem; }
+  h1 .hl { color: var(--accent); }
+  h2 { font-size: 2.2rem; margin-bottom: 1.4rem; color: var(--ink); }
+  h2 .hl { color: var(--accent); }
+  p.lead { font-size: 1.25rem; color: var(--muted); max-width: 60ch; }
+  ul.points { text-align: left; font-size: 1.15rem; line-height: 1.9; color: var(--ink); max-width: 62ch; }
+  ul.points li::marker { color: var(--accent); }
+  ul.points code, p code, td code {
+    background: #242420; border-radius: 4px; padding: .1em .4em;
+    font-family: Consolas, monospace; font-size: .92em; color: var(--accent3);
+  }
+  pre.terminal {
+    background: #0e0e0c; border: 1px solid var(--grid); border-radius: 10px;
+    padding: 1.1rem 1.4rem; text-align: left; font-family: Consolas, monospace;
+    font-size: .95rem; line-height: 1.7; color: var(--accent3); max-width: 68ch;
+    overflow-x: auto; white-space: pre;
+  }
+  pre.terminal .c { color: var(--muted); }
+  table.compare { border-collapse: collapse; font-size: 1rem; margin-top: .6rem; }
+  table.compare th, table.compare td { border: 1px solid var(--grid); padding: .5rem 1.1rem; }
+  table.compare th { color: var(--muted); font-weight: 600; }
+  table.compare td:last-child { color: var(--accent); font-weight: 700; }
+  img.chart { max-width: 78vw; max-height: 62vh; border-radius: 12px;
+    border: 1px solid var(--grid); background: var(--bg); }
+  .diagram { font-family: Consolas, monospace; font-size: 1.02rem; line-height: 1.9;
+    text-align: left; color: var(--accent3); background: #0e0e0c;
+    border: 1px solid var(--grid); border-radius: 10px; padding: 1.2rem 1.6rem; }
+  .diagram b { color: var(--accent); }
+  #progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); width: 0; z-index: 10; }
+  #counter { position: fixed; bottom: 14px; right: 20px; color: var(--muted); font-size: .85rem; }
+  #hint { position: fixed; bottom: 14px; left: 20px; color: var(--muted); font-size: .85rem; }
+  .cols { display: flex; gap: 3rem; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .badge { display: inline-block; border: 1px solid var(--accent); color: var(--accent);
+    border-radius: 999px; padding: .25rem .9rem; font-size: .85rem; letter-spacing: .12em;
+    text-transform: uppercase; margin-bottom: 1.6rem; }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div id="deck">
+
+<section class="slide">
+  <div class="badge">course</div>
+  <h1>A GLM-Style Model,<br>Built <span class="hl">From Scratch</span></h1>
+  <p class="lead">Hybrid attention, mixture of experts, multi-stream residuals — then recursive self-improvement: a 25.7M-parameter model that trains on its own verified programs.</p>
+</section>
+
+<section class="slide">
+  <h2>What we scale down</h2>
+  <table class="compare">
+    <tr><th>Component</th><th>GLM-5.3-Flash</th><th>This project</th></tr>
+    <tr><td>Total parameters</td><td>320B</td><td>25,730,592</td></tr>
+    <tr><td>Active / token</td><td>18B</td><td>9,805,344</td></tr>
+    <tr><td>Layers</td><td>45</td><td>12</td></tr>
+    <tr><td>Attention</td><td>34 linear + 11 sparse</td><td>9 linear + 3 sparse</td></tr>
+    <tr><td>Experts</td><td>288, top-8</td><td>8, top-2</td></tr>
+    <tr><td>Tokenizer</td><td>BPE 154,880</td><td>raw bytes, 260</td></tr>
+  </table>
+</section>
+
+<section class="slide">
+  <h2>The architecture in one picture</h2>
+  <div class="diagram">
+bytes → embedding → <b>four residual streams</b><br>
+                  ↓<br>
+        [linear attention + MoE] × 3<br>
+                  ↓<br>
+        [sparse attention + MoE] × 1<br>
+                  ↓<br>
+             repeat × 3<br>
+                  ↓<br>
+           RMSNorm → tied LM head
+  </div>
+  <p class="lead" style="margin-top:1.2rem">Every fourth layer switches from O(length) linear attention to gathered sparse attention.</p>
+</section>
+
+<section class="slide">
+  <h2>Hybrid attention</h2>
+  <ul class="points">
+    <li><b>Linear layers:</b> ELU+1 positive features, prefix-sum state — O(length), no softmax.</li>
+    <li><b>Sparse layers:</b> recent local window + strided anchor tokens, true softmax over only those.</li>
+    <li>Rotary embeddings in both; float32 softmax and norms for stability.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Mixture of experts</h2>
+  <ul class="points">
+    <li>Router picks <code>top-2 of 8</code> experts per token; weights = softmax over the top logits.</li>
+    <li>One <b>shared expert</b> is always on — capacity every token can rely on.</li>
+    <li>Readable loop dispatcher: <code>torch.where</code> + <code>index_add_</code>, plus per-expert usage stats.</li>
+    <li>Training adds a small router balance loss.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Residual streams</h2>
+  <ul class="points">
+    <li>Each block sees a learned softmax mix of the 4 streams.</li>
+    <li>Its output is routed back to every stream with learned weights.</li>
+    <li>A simplified stand-in for manifold-constrained hyper-connections.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Bytes, not BPE</h2>
+  <p class="lead">One token per UTF-8 byte: no learned vocabulary, exact round-trip, tiny tied embedding — the model predicts the <b>next byte</b> of Python.</p>
+  <pre class="terminal">"def increment(x):"   → 17 byte tokens (BPE would use 4)</pre>
+</section>
+
+<section class="slide">
+  <h2>The verifier is the reward</h2>
+  <ul class="points">
+    <li>Fail-closed AST gate: one function, no imports, no loops, no attributes, allowlisted calls only.</li>
+    <li>Hidden unit tests execute in a restricted namespace.</li>
+    <li>Statuses: <code>passed</code> / <code>failed</code> / <code>invalid</code> — never raises, never trusts.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Stage 1 — pretraining</h2>
+  <pre class="terminal"><span class="c"># synthetic Python corpus, generated on the fly</span>
+run_cpu.bat scripts\train_pretrain.py --output runs\pretrain-001 ^
+  --steps 150 --checkpoints 50,100,150 --batch-size 16 --seed 42</pre>
+  <img class="chart" src="../artifacts/charts/pretrain-loss.svg" alt="pretraining loss"
+       onerror="this.style.display='none'">
+</section>
+
+<section class="slide">
+  <h2>Stage 2 — RLOO post-training</h2>
+  <ul class="points">
+    <li>Sample a <b>group</b> of completions per task; reward = executable tests.</li>
+    <li>Advantage = reward minus the mean of the <b>other</b> members (leave-one-out).</li>
+    <li>Whole group scored in one padded forward pass; zero-spread groups skip the update.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Stage 3 — <span class="hl">recursive self-improvement</span></h2>
+  <div class="diagram">
+for cycle in 1..N:
+    <b>propose</b>   sample K completions per task from the current policy
+    <b>verify</b>    keep only completions that pass every hidden test
+    <b>distill</b>   add to the cumulative verified memory (deduplicated)
+    <b>retrain</b>   fine-tune on the model's own verified programs
+    <b>evaluate</b>  greedy pass@1 on frozen tasks
+    <b>escalate</b>  master the rung? unlock the next, harder family
+  </div>
+  <p class="lead" style="margin-top:1.2rem">The feedback loop is closed by the executable verifier — the model can only learn from programs that actually run.</p>
+</section>
+
+<section class="slide">
+  <h2>The improvement ladder</h2>
+  <img class="chart" src="../artifacts/charts/self-improvement-ladder.svg" alt="self-improvement ladder"
+       onerror="this.style.display='none'">
+  <p class="lead">Receipts record verified-pair counts and pass rates per cycle.</p>
+</section>
+
+<section class="slide">
+  <h2>Bonus — a GLM-faithful vision path</h2>
+  <ul class="points">
+    <li>RGB patch embedding → 2 bidirectional ViT blocks → 2×2 learned merger → gated projector.</li>
+    <li>16 visual tokens replace placeholders inside the byte sequence; answer-only loss.</li>
+    <li>Compared against a direct-patch baseline on generated seven-segment digits.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Research experiments</h2>
+  <ul class="points">
+    <li><b>Data diversity:</b> 8 vs 32 vs 88 unique structures at fixed compute, paired seeds.</li>
+    <li><b>Ordering:</b> identical examples, blocked vs interleaved vs 8→88 curriculum.</li>
+    <li><b>RL screen:</b> one design choice at a time, exact McNemar + Holm correction.</li>
+    <li><b>Vision pilot:</b> full 12-layer model + vision tower, bounded trainable surface.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Everything is auditable</h2>
+  <ul class="points">
+    <li>Versioned JSON receipts with SHA-256 weight hashes for every run.</li>
+    <li>Deterministic seeds from pure integer hashes — rerun and get the same data.</li>
+    <li>Fail-closed everywhere: no overwrites, no silent NaNs, no unknown splits.</li>
+  </ul>
+  <pre class="terminal">run_cpu.bat scripts\train_self_improve.py --initial-checkpoint ... ^  --output runs\self-improve-001</pre>
+</section>
+
+<section class="slide">
+  <h2>Limitations, stated plainly</h2>
+  <ul class="points">
+    <li>25M parameters, 192-byte context, synthetic benchmark.</li>
+    <li>Screen wins can reverse on fresh seeds and untouched tasks.</li>
+    <li>This is a teaching artifact — it establishes method, not broad ability.</li>
+  </ul>
+  <p class="lead" style="margin-top:1.4rem">Build it, measure it, report it — including the negative results.</p>
+</section>
+
+</div>
+<div id="counter"></div>
+<div id="hint">← → or Space to navigate</div>
+<script>
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  let index = 0;
+  function show(next) {
+    index = Math.max(0, Math.min(slides.length - 1, next));
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+    document.getElementById("counter").textContent = `${index + 1} / ${slides.length}`;
+    document.getElementById("progress").style.width = `${(index + 1) / slides.length * 100}%`;
+  }
+  document.addEventListener("keydown", (event) => {
+    if (["ArrowRight", " ", "PageDown"].includes(event.key)) { show(index + 1); event.preventDefault(); }
+    if (["ArrowLeft", "PageUp"].includes(event.key)) { show(index - 1); event.preventDefault(); }
+    if (event.key === "Home") show(0);
+    if (event.key === "End") show(slides.length - 1);
+  });
+  document.addEventListener("click", (event) => {
+    if (event.target.closest("a, pre, img")) return;
+    show(index + 1);
+  });
+  show(0);
+</script>
+</body>
+</html>
